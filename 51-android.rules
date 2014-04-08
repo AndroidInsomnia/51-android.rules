@@ -1,72 +1,151 @@
-# Acer
-SUBSYSTEM=="usb", ATTRS{idVendor}=="0502", MODE="0666", GROUP="plugdev"
-# ASUS
-SUBSYSTEM=="usb", ATTRS{idVendor}=="0b05", MODE="0666", GROUP="plugdev"
-# Dell
-SUBSYSTEM=="usb", ATTRS{idVendor}=="413c", MODE="0666", GROUP="plugdev"
-# Foxconn
-SUBSYSTEM=="usb", ATTRS{idVendor}=="0489", MODE="0666", GROUP="plugdev"
-# Fujitsu
-SUBSYSTEM=="usb", ATTRS{idVendor}=="04c5", MODE="0666", GROUP="plugdev"
-# Fujitsu Toshiba
-SUBSYSTEM=="usb", ATTRS{idVendor}=="04c5", MODE="0666", GROUP="plugdev"
-# Garmin-ASUS
-SUBSYSTEM=="usb", ATTRS{idVendor}=="091e", MODE="0666", GROUP="plugdev"
-# Google
-SUBSYSTEM=="usb", ATTRS{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
+#Acer 0502
+SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0666", GROUP="plugdev"
+
+#ASUS 0b05
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", MODE="0666", GROUP="plugdev"
+	# FonePad 7(ME372CG) 551f
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="551f", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="551f", SYMLINK+="android_fastboot"
+
+#Dell 413c
+SUBSYSTEM=="usb", ATTR{idVendor}=="413c", MODE="0666", GROUP="plugdev"
+
+#Foxconn 0489
+SUBSYSTEM=="usb", ATTR{idVendor}=="0489", MODE="0666", GROUP="plugdev"
+
+#Fujitsu, Fujitsu Toshiba 04c5
+SUBSYSTEM=="usb", ATTR{idVendor}=="04c5", MODE="0666", GROUP="plugdev"
+
+#Garmin-Asus 091e
+SUBSYSTEM=="usb", ATTR{idVendor}=="091e", MODE="0666", GROUP="plugdev"
+
+#USmart 16d5
+SUBSYSTEM=="usb", ATTR{idVendor}=="16d5", MODE="0666", GROUP="plugdev"
+	#SL88 8005
+SUBSYSTEM=="usb", ATTR{idVendor}=="16d5", ATTR{idProduct}=="8005", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="16d5", ATTR{idProduct}=="8005", SYMLINK+="android_fastboot"
+
+#Google 18d1
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
+	#Nexus 7 2013(LTE) 0c03
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="0c03", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="0c03", SYMLINK+="android_fastboot"
+	# adb protocol on passion (Nexus One)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", SYMLINK+="android_fastboot"
+	# fastboot protocol on crespo/crespo4g (Nexus S)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", SYMLINK+="android_fastboot"
+	# adb protocol on crespo/crespo4g (Nexus S)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", SYMLINK+="android_fastboot"
+	# fastboot protocol on maguro/toro (Galaxy Nexus)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", SYMLINK+="android_fastboot"
+	# fastboot protocol on grouper/tilapia (Nexus 7)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", SYMLINK+="android_fastboot"
+	# adb protocol on grouper/tilapia (Nexus 7)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", SYMLINK+="android_fastboot"
+	# fastboot protocol on manta (Nexus 10)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", SYMLINK+="android_fastboot"
+	# adb protocol on manta (Nexus 10)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", SYMLINK+="android_fastboot"
+	# fastboot protocol on stingray/wingray (Xoom)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="708c", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="708c", SYMLINK+="android_fastboot"
+	# adb protocol on panda (PandaBoard ES)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d002", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d002", SYMLINK+="android_fastboot"
+
 # Hisense
 SUBSYSTEM=="usb", ATTRS{idVendor}=="109b", MODE="0666", GROUP="plugdev"
+
 # HTC
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"
+	# fastboot protocol on passion (Nexus One) 0fff
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+
 # Huawei
 SUBSYSTEM=="usb", ATTRS{idVendor}=="12d1", MODE="0666", GROUP="plugdev"
+
 # K-Touch
 SUBSYSTEM=="usb", ATTRS{idVendor}=="24e3", MODE="0666", GROUP="plugdev"
+
 # KT Tech
 SUBSYSTEM=="usb", ATTRS{idVendor}=="2116", MODE="0666", GROUP="plugdev"
+
 # Kyocera
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0482", MODE="0666", GROUP="plugdev"
+
 # Lenovo
 SUBSYSTEM=="usb", ATTRS{idVendor}=="17ef", MODE="0666", GROUP="plugdev"
+
 # LG
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1004", MODE="0666", GROUP="plugdev"
+
 # Motorola
 SUBSYSTEM=="usb", ATTRS{idVendor}=="22b8", MODE="0666", GROUP="plugdev"
+	# adb protocol on stingray/wingray (Xoom)
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_fastboot"
+
 # NEC
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0409", MODE="0666", GROUP="plugdev"
+
 # Nook
 SUBSYSTEM=="usb", ATTRS{idVendor}=="2080", MODE="0666", GROUP="plugdev"
+
 # NVIDIA
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0955", MODE="0666", GROUP="plugdev"
+
 # OTGV
 SUBSYSTEM=="usb", ATTRS{idVendor}=="2287", MODE="0666", GROUP="plugdev"
+
 # Pantech
 SUBSYSTEM=="usb", ATTRS{idVendor}=="10a9", MODE="0666", GROUP="plugdev"
+
 # Pegatron
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1d4d", MODE="0666", GROUP="plugdev"
+
 # Philips
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0471", MODE="0666", GROUP="plugdev"
+
 # PMC-Sierra
 SUBSYSTEM=="usb", ATTRS{idVendor}=="04da", MODE="0666", GROUP="plugdev"
+
 # Qualcomm
 SUBSYSTEM=="usb", ATTRS{idVendor}=="05c6", MODE="0666", GROUP="plugdev"
+
 # SK Telesys
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1f53", MODE="0666", GROUP="plugdev"
+
 # Samsung
 SUBSYSTEM=="usb", ATTRS{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+	# adb protocol on maguro/toro (Galaxy Nexus)
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="android_fastboot"
+
 # Sharp
 SUBSYSTEM=="usb", ATTRS{idVendor}=="04dd", MODE="0666", GROUP="plugdev"
+
 # Sony
 SUBSYSTEM=="usb", ATTRS{idVendor}=="054c", MODE="0666", GROUP="plugdev"
+
 # Sony Ericsson
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0fce", MODE="0666", GROUP="plugdev"
+
 # Teleepoch
 SUBSYSTEM=="usb", ATTRS{idVendor}=="2340", MODE="0666", GROUP="plugdev"
+
 # Toshiba
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0930", MODE="0666", GROUP="plugdev"
+
 # ZTE
 SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", MODE="0666", GROUP="plugdev"
-# SYMLINK and OTHER ???
-SUBSYSTEM==”usb”, ATTRS{idVendor}==”18d1″, SYMLINK+=”android_adb”, MODE=”0666″
-SUBSYSTEM=="usb", ATTRS{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+
 # NOTE: Don't forget to "chmod a+r /etc/udev/rules.d/51-android.rules" in terminal.
